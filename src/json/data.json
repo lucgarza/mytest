@@ -1,0 +1,187 @@
+{
+  "total": 20,
+  "totalNotFiltered": 20,
+  "rows": [
+    {
+      "contract vendor": "vendor name one",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$140",
+      "nys discount": "$10",
+      "nys net contract price": "$100"
+    },
+    {
+      "contract vendor": "two vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$160",
+      "nys discount": "$15",
+      "nys net contract price": "$120"
+    },
+    {
+      "contract vendor": "three vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$180",
+      "nys discount": "$40",
+      "nys net contract price": "$140"
+    },
+    {
+      "contract vendor": "vendor name four",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$190",
+      "nys discount": "$80",
+      "nys net contract price": "$110"
+    },
+    {
+      "contract vendor": "five vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$160",
+      "nys discount": "$20",
+      "nys net contract price": "$140"
+    },
+    {
+      "contract vendor": "vendor name one",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$140",
+      "nys discount": "$10",
+      "nys net contract price": "$100"
+    },
+    {
+      "contract vendor": "two vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$160",
+      "nys discount": "$15",
+      "nys net contract price": "$120"
+    },
+    {
+      "contract vendor": "three vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$180",
+      "nys discount": "$40",
+      "nys net contract price": "$140"
+    },
+    {
+      "contract vendor": "vendor name four",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$190",
+      "nys discount": "$80",
+      "nys net contract price": "$110"
+    },
+    {
+      "contract vendor": "five vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$160",
+      "nys discount": "$20",
+      "nys net contract price": "$140"
+    },
+    {
+      "contract vendor": "vendor name one",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$140",
+      "nys discount": "$10",
+      "nys net contract price": "$100"
+    },
+    {
+      "contract vendor": "two vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$160",
+      "nys discount": "$15",
+      "nys net contract price": "$120"
+    },
+    {
+      "contract vendor": "three vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$180",
+      "nys discount": "$40",
+      "nys net contract price": "$140"
+    },
+    {
+      "contract vendor": "vendor name four",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$190",
+      "nys discount": "$80",
+      "nys net contract price": "$110"
+    },
+    {
+      "contract vendor": "five vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "software",
+      "list price": "$160",
+      "nys discount": "$20",
+      "nys net contract price": "$140"
+    },
+    {
+      "contract vendor": "vendor name one",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$140",
+      "nys discount": "$10",
+      "nys net contract price": "$100"
+    },
+    {
+      "contract vendor": "two vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$160",
+      "nys discount": "$15",
+      "nys net contract price": "$120"
+    },
+    {
+      "contract vendor": "three vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$180",
+      "nys discount": "$40",
+      "nys net contract price": "$140"
+    },
+    {
+      "contract vendor": "vendor name four",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$190",
+      "nys discount": "$80",
+      "nys net contract price": "$110"
+    },
+    {
+      "contract vendor": "five vendor name",
+      "product name": "Item 0",
+      "product description": "this is a description",
+      "category": "hardware",
+      "list price": "$160",
+      "nys discount": "$20",
+      "nys net contract price": "$140"
+    }
+    
+  ]
+}
