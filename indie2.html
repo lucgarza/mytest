@@ -38,58 +38,60 @@
             <i class="glyphicon glyphicon-remove"></i> Delete
         </button>
     </div>
-    <table id="table" data-toolbar="#toolbar" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-fullscreen="true" data-show-columns="true" data-show-columns-toggle-all="true" data-detail-view="true" data-show-export="true" data-click-to-select="true"
-        data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10, 25, 50, 100, all]" data-show-footer="true" data-side-pagination="server" data-url="src/json/data.json"
-        data-response-handler="responseHandler">
+    <div class="container">
+        <table id="table" data-toolbar="#toolbar" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-fullscreen="true" data-show-columns="true" data-show-columns-toggle-all="true" data-detail-view="true" data-show-export="true" data-click-to-select="true"
+            data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10, 25, 50, 100, all]" data-show-footer="true" data-side-pagination="server" data-url="src/json/data.json"
+            data-response-handler="responseHandler">
 
-        <thead>
-            <tr>
-                <th class="detail" rowspan="1">
-                    <div class="fht-cell"></div>
-                </th>
-                <th class="bs-checkbox " style="text-align: center; vertical-align: middle; width: 36px; " data-field="state">
-                    <div class="th-inner "><label><input name="btSelectAll" type="checkbox"><span></span></label></div>
-                    <div class="fht-cell"></div>
-                </th>
-                <th style="text-align: left; vertical-align: middle; " data-field="contract vendor">
-                    <div class="th-inner sortable both">Contract Vendor</div>
-                    <div class="fht-cell"></div>
-                </th>
-                <th style="text-align: left; vertical-align: middle; " data-field="product name">
-                    <div class="th-inner sortable both">Product Name</div>
-                    <div class="fht-cell"></div>
-                </th>
-                <th style="text-align: left; vertical-align: middle; " data-field="product description">
-                    <div class="th-inner sortable both">Product Description</div>
-                    <div class="fht-cell"></div>
-                </th>
-                <th style="text-align: left; vertical-align: middle; " data-field="category">
-                    <div class="th-inner sortable both">Category</div>
-                    <div class="fht-cell"></div>
-                </th>
-                <th style="text-align: left; vertical-align: middle; " data-field="list price">
-                    <div class="th-inner sortable both">List Price</div>
-                    <div class="fht-cell"></div>
-                </th>
-                <th style="text-align: left; vertical-align: middle; " data-field="nys discount">
-                    <div class="th-inner sortable both">NYS Discount</div>
-                    <div class="fht-cell"></div>
-                </th>
-                <th style="text-align: left; vertical-align: middle; " data-field="nys net contract price">
-                    <div class="th-inner sortable both">NYS Net Contract Price</div>
-                    <div class="fht-cell"></div>
-                </th>
-            </tr>
-        </thead>
+            <thead>
+                <tr>
+                    <th class="detail" rowspan="1">
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th class="bs-checkbox " style="text-align: center; vertical-align: middle; width: 36px; " data-field="state">
+                        <div class="th-inner "><label><input name="btSelectAll" type="checkbox"><span></span></label></div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th style="text-align: left; vertical-align: middle; " data-field="contract vendor">
+                        <div class="th-inner sortable both">Contract Vendor</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th style="text-align: left; vertical-align: middle; " data-field="product name">
+                        <div class="th-inner sortable both">Product Name</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th style="text-align: left; vertical-align: middle; " data-field="product description">
+                        <div class="th-inner sortable both">Product Description</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th style="text-align: left; vertical-align: middle; " data-field="category">
+                        <div class="th-inner sortable both">Category</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th style="text-align: left; vertical-align: middle; " data-field="list price">
+                        <div class="th-inner sortable both">List Price</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th style="text-align: left; vertical-align: middle; " data-field="nys discount">
+                        <div class="th-inner sortable both">NYS Discount</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th style="text-align: left; vertical-align: middle; " data-field="nys net contract price">
+                        <div class="th-inner sortable both">NYS Net Contract Price</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                </tr>
+            </thead>
 
-        <tbody>
-            <tr class="no-records-found">
-                <td colspan="10">No records found</td>
-            </tr>
-        </tbody>
+            <tbody>
+                <tr class="no-records-found">
+                    <td colspan="10">No records found</td>
+                </tr>
+            </tbody>
 
 
-    </table>
+        </table>
+    </div>
 
     <script>
         var $table = $('#table')
