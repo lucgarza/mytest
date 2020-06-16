@@ -9,9 +9,6 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/48413c591e.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
 
     <link href="css/bootstrap-table.min.css" rel="stylesheet">
 
@@ -30,176 +27,199 @@
             margin-right: 10px;
         }
     </style>
+</head>
 
+<body>
+    <!-- Just an image -->
+    <!-- Just an image -->
+    <header>
+        <nav class="navbar fixed-top" style="background-color: white;">
+            <div class="container-fluid" style="border-bottom: 1px solid #ccc;">
+                <div class="row">
+                    <div class="col-xs-4" style="padding-top: 8px; padding-left:20px; padding-right:20px; min-height: 100px; border-right: 1px solid #ccc;">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://static-assets.ny.gov/sites/all/themes/ny_gov/images/nygov-logo.png" width="109" height="66" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-8" style="min-height: 80px; color: #F7A900;">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <div class="container-fluid">
-        <table id="table" data-toolbar="#toolbar" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-fullscreen="true" data-show-columns="true" data-show-columns-toggle-all="true" data-detail-view="true" data-show-export="true" data-click-to-select="true"
-            data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10, 25, 50, 100, all]" data-show-footer="true" data-side-pagination="server" data-url="src/json/data.json"
-            data-response-handler="responseHandler">
-        </table>
-    </div>
-    <div id="toolbar">
-        <button id="remove" class="btn btn-danger" disabled>
-            <i class="glyphicon glyphicon-remove"></i> Delete
-          </button>
-    </div>
+    <div class="phead">
+        <div id="toolbar">
+            <button id="remove" class="btn btn-danger" disabled>
+        <i class="glyphicon glyphicon-remove"></i> Delete
+      </button>
+        </div>
+        <div class="container-fluid">
+            <table id="table" data-toolbar="#toolbar" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-fullscreen="true" data-show-columns="true" data-show-columns-toggle-all="true" data-detail-view="true" data-show-export="true" data-click-to-select="true"
+                data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10, 25, 50, 100, all]" data-show-footer="true" data-side-pagination="server"
+                data-url="src/json/data.json" data-response-handler="responseHandler">
+                <th class="table thead-dark th">
+                </th>
+            </table>
+        </div>
 
-    <script>
-        var $table = $('#table')
-        var $remove = $('#remove')
-        var selections = []
+        <script>
+            var $table = $('#table')
+            var $remove = $('#remove')
+            var selections = []
 
-        function getIdSelections() {
-            return $.map($table.bootstrapTable('getSelections'), function(row) {
-                return row.id
-            })
-        }
-
-        function responseHandler(res) {
-            $.each(res.rows, function(i, row) {
-                row.state = $.inArray(row.id, selections) !== -1
-            })
-            return res
-        }
-
-        function detailFormatter(index, row) {
-            var html = []
-            $.each(row, function(key, value) {
-                html.push('<p><b>' + key + ':</b> ' + value + '</p>')
-            })
-            return html.join('')
-        }
-
-        function operateFormatter(value, row, index) {
-            return [
-                '<a class="like" href="javascript:void(0)" title="Like">',
-                '<i class="fa fa-heart"></i>',
-                '</a>  ',
-                '<a class="remove" href="javascript:void(0)" title="Remove">',
-                '<i class="fa fa-trash"></i>',
-                '</a>'
-            ].join('')
-        }
-
-        window.operateEvents = {
-            'click .like': function(e, value, row, index) {
-                alert('You click like action, row: ' + JSON.stringify(row))
-            },
-            'click .remove': function(e, value, row, index) {
-                $table.bootstrapTable('remove', {
-                    field: 'id',
-                    values: [row.id]
+            function getIdSelections() {
+                return $.map($table.bootstrapTable('getSelections'), function(row) {
+                    return row.id
                 })
             }
-        }
 
-        function totalTextFormatter(data) {
-            return 'Total'
-        }
-
-        function totalNameFormatter(data) {
-            return data.length
-        }
-
-        function totalPriceFormatter(data) {
-            var field = this.field
-            return '$' + data.map(function(row) {
-                return +row[field].substring(1)
-            }).reduce(function(sum, i) {
-                return sum + i
-            }, 0)
-        }
-
-        function initTable() {
-            $table.bootstrapTable('destroy').bootstrapTable({
-                height: 550,
-                locale: $('#locale').val(),
-                columns: [
-                    [{
-                        field: 'state',
-                        checkbox: true,
-                        align: 'center',
-                        valign: 'middle'
-                    }, {
-                        title: 'Contract Vendor',
-                        field: 'contract vendor',
-                        align: 'left',
-                        valign: 'middle',
-                        sortable: true,
-                        //footerFormatter: totalTextFormatter
-                    }, {
-                        title: 'Product Name',
-                        field: 'product name',
-                        align: 'left',
-                        valign: 'middle',
-                        sortable: true,
-                        //footerFormatter: totalTextFormatter
-                    }, {
-                        title: 'Product Description',
-                        field: 'product description',
-                        align: 'left',
-                        valign: 'middle',
-                        sortable: true,
-                        //footerFormatter: totalTextFormatter
-                    }, {
-                        title: 'Category',
-                        field: 'category',
-                        align: 'left',
-                        valign: 'middle',
-                        sortable: true,
-                        //footerFormatter: totalTextFormatter
-                    }, {
-                        title: 'List Price',
-                        field: 'list price',
-                        align: 'left',
-                        valign: 'middle',
-                        sortable: true,
-                        //footerFormatter: totalTextFormatter
-                    }, {
-                        title: 'NYS Discount',
-                        field: 'nys discount',
-                        align: 'left',
-                        valign: 'middle',
-                        sortable: true,
-                        //footerFormatter: totalTextFormatter
-                    }, {
-                        title: 'NYS Net Contract Price',
-                        field: 'nys net contract price',
-                        align: 'left',
-                        valign: 'middle',
-                        sortable: true,
-                        //footerFormatter: totalTextFormatter
-                    }, ]
-                ]
-            })
-            $table.on('check.bs.table uncheck.bs.table ' +
-                'check-all.bs.table uncheck-all.bs.table',
-                function() {
-                    $remove.prop('disabled', !$table.bootstrapTable('getSelections').length)
-
-                    // save your data, here just save the current page
-                    selections = getIdSelections()
-                        // push or splice the selections if you want to save all data selections
+            function responseHandler(res) {
+                $.each(res.rows, function(i, row) {
+                    row.state = $.inArray(row.id, selections) !== -1
                 })
-            $table.on('all.bs.table', function(e, name, args) {
-                console.log(name, args)
-            })
-            $remove.click(function() {
-                var ids = getIdSelections()
-                $table.bootstrapTable('remove', {
-                    field: 'id',
-                    values: ids
+                return res
+            }
+
+            function detailFormatter(index, row) {
+                var html = []
+                $.each(row, function(key, value) {
+                    html.push('<p><b>' + key + ':</b> ' + value + '</p>')
                 })
-                $remove.prop('disabled', true)
+                return html.join('')
+            }
+
+            function operateFormatter(value, row, index) {
+                return [
+                    '<a class="like" href="javascript:void(0)" title="Like">',
+                    '<i class="fa fa-heart"></i>',
+                    '</a>  ',
+                    '<a class="remove" href="javascript:void(0)" title="Remove">',
+                    '<i class="fa fa-trash"></i>',
+                    '</a>'
+                ].join('')
+            }
+
+            window.operateEvents = {
+                'click .like': function(e, value, row, index) {
+                    alert('You click like action, row: ' + JSON.stringify(row))
+                },
+                'click .remove': function(e, value, row, index) {
+                    $table.bootstrapTable('remove', {
+                        field: 'id',
+                        values: [row.id]
+                    })
+                }
+            }
+
+            function totalTextFormatter(data) {
+                return 'Total'
+            }
+
+            function totalNameFormatter(data) {
+                return data.length
+            }
+
+            function totalPriceFormatter(data) {
+                var field = this.field
+                return '$' + data.map(function(row) {
+                    return +row[field].substring(1)
+                }).reduce(function(sum, i) {
+                    return sum + i
+                }, 0)
+            }
+
+            function initTable() {
+                $table.bootstrapTable('destroy').bootstrapTable({
+                    height: 550,
+                    locale: $('#locale').val(),
+                    columns: [
+                        [{
+                            field: 'state',
+                            checkbox: true,
+                            align: 'center',
+                            valign: 'middle'
+                        }, {
+                            title: 'Contract Vendor',
+                            field: 'contract vendor',
+                            align: 'left',
+                            valign: 'middle',
+                            sortable: true,
+                            //footerFormatter: totalTextFormatter
+                        }, {
+                            title: 'Product Name',
+                            field: 'product name',
+                            align: 'left',
+                            valign: 'middle',
+                            sortable: true,
+                            //footerFormatter: totalTextFormatter
+                        }, {
+                            title: 'Product Description',
+                            field: 'product description',
+                            align: 'left',
+                            valign: 'middle',
+                            sortable: true,
+                            //footerFormatter: totalTextFormatter
+                        }, {
+                            title: 'Category',
+                            field: 'category',
+                            align: 'left',
+                            valign: 'middle',
+                            sortable: true,
+                            //footerFormatter: totalTextFormatter
+                        }, {
+                            title: 'List Price',
+                            field: 'list price',
+                            align: 'left',
+                            valign: 'middle',
+                            sortable: true,
+                            //footerFormatter: totalTextFormatter
+                        }, {
+                            title: 'NYS Discount',
+                            field: 'nys discount',
+                            align: 'left',
+                            valign: 'middle',
+                            sortable: true,
+                            //footerFormatter: totalTextFormatter
+                        }, {
+                            title: 'NYS Net Contract Price',
+                            field: 'nys net contract price',
+                            align: 'left',
+                            valign: 'middle',
+                            sortable: true,
+                            //footerFormatter: totalTextFormatter
+                        }, ]
+                    ]
+                })
+                $table.on('check.bs.table uncheck.bs.table ' +
+                    'check-all.bs.table uncheck-all.bs.table',
+                    function() {
+                        $remove.prop('disabled', !$table.bootstrapTable('getSelections').length)
+
+                        // save your data, here just save the current page
+                        selections = getIdSelections()
+                            // push or splice the selections if you want to save all data selections
+                    })
+                $table.on('all.bs.table', function(e, name, args) {
+                    console.log(name, args)
+                })
+                $remove.click(function() {
+                    var ids = getIdSelections()
+                    $table.bootstrapTable('remove', {
+                        field: 'id',
+                        values: ids
+                    })
+                    $remove.prop('disabled', true)
+                })
+            }
+
+            $(function() {
+                initTable()
+
+                $('#locale').change(initTable)
             })
-        }
-
-        $(function() {
-            initTable()
-
-            $('#locale').change(initTable)
-        })
-    </script>
+        </script>
+    </div>
 </body>
 
 </html>

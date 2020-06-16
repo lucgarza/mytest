@@ -104,7 +104,8 @@
     vertical-align: bottom;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap
+    white-space: nowrap;
+    color: var(--darkgray);
 }
 
 .bootstrap-table .fixed-table-container .table thead th .sortable {
@@ -185,7 +186,10 @@
 }
 
 .bootstrap-table .fixed-table-container .fixed-table-header {
-    overflow: hidden
+    overflow: hidden;
+    color: #fff;
+    background-color: var(--midgray);
+    border-color: var(--midgray)
 }
 
 .bootstrap-table .fixed-table-container .fixed-table-body {
