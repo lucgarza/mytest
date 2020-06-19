@@ -56,10 +56,10 @@
             <i class="glyphicon glyphicon-remove"></i> Delete
         </button>
         </div>
-        <div class="container">
-            <table id="table" data-toolbar="#toolbar" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-fullscreen="true" data-show-columns="true" data-show-columns-toggle-all="true" data-detail-view="true" data-show-export="true" data-click-to-select="true"
-                data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10, 25, 50, 100, all]" data-show-footer="true" data-side-pagination="server"
-                data-url="src/json/data.json" data-response-handler="responseHandler">
+        <div class="container-fluid">
+            <table class="table table-hover" id="table" data-height="500" data-toolbar="#toolbar" data-search="true" data-show-refresh="true" data-show-export="true" data-click-to-select="true" data-detail-formatter="detailFormatter" data-minimum-count-columns="2"
+                data-show-pagination-switch="false" data-pagination="false" data-id-field="id" data-show-footer="false" data-url="src/json/data.json" data-response-handler="responseHandler">
+                <th class="table th"></th>
 
                 <thead>
                     <tr>
