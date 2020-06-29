@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <title>Bootstrap</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="css/ny-custom.css">
+
+    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table-locale-en.min.js"></script>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -15,100 +21,51 @@
 
 <body>
 
-    <link href="css/bootstrap-table.min.css" rel="stylesheet">
-
-    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
-    <script src="css/bootstrap-table-locale-all.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
-
-    <style>
-        .select,
-        #locale {
-            width: 100%;
-        }
-        
-        .like {
-            margin-right: 10px;
-        }
-    </style>
 
     <!-- Just an image -->
-    <header>
-        <nav class="navbar fixed-top" style="background-color: white;">
-            <div class="container-fluid" style="border-bottom: 1px solid #ccc;">
-                <div class="row">
-                    <div class="col-xs-4" style="padding-top: 8px; padding-left:20px; padding-right:20px; min-height: 100px; border-right: 1px solid #ccc;">
-                        <a class="navbar-brand" href="#">
-                            <img src="https://static-assets.ny.gov/sites/all/themes/ny_gov/images/nygov-logo.png" width="109" height="66" alt="">
-                        </a>
-                    </div>
-                    <div class="col-xs-8" style="min-height: 80px; color: #F7A900;">
-                    </div>
+
+        
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: white;">
+            <a class="navbar-brand" href="#"><img src="https://static-assets.ny.gov/sites/all/themes/ny_gov/images/nygov-logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-5" id="navbarNav" style="min-height: 80px;">
+                <ul class="navbar-nav mynav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Page 1 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Page 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page 5</a>
+                </ul>
+                <div class="mrt ml-auto">
+                    <ul class="navbar-nav mynav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page 6</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-    </header>
 
-    <div class="phead">
+    <div class="phead" style="padding-top: 130px">
         <div id="toolbar">
             <button id="remove" class="btn btn-danger" disabled>
-            <i class="glyphicon glyphicon-remove"></i> Delete
-        </button>
+                <i class="glyphicon glyphicon-remove"></i> Delete
+            </button>
         </div>
         <div class="container-fluid">
-            <table class="table table-hover" id="table" data-height="500" data-toolbar="#toolbar" data-search="true" data-show-refresh="true" data-show-export="true" data-click-to-select="true" data-detail-formatter="detailFormatter" data-minimum-count-columns="2"
-                data-show-pagination-switch="false" data-pagination="false" data-id-field="id" data-show-footer="false" data-url="src/json/data.json" data-response-handler="responseHandler">
-                <th class="table th"></th>
-
-
-                <thead>
-                    <tr>
-                        <th class="detail" rowspan="1">
-                            <div class="fht-cell"></div>
-                        </th>
-                        <th class="bs-checkbox " style="text-align: center; vertical-align: middle; width: 36px; " data-field="state">
-                            <div class="th-inner "><label><input name="btSelectAll" type="checkbox"><span></span></label></div>
-                            <div class="fht-cell"></div>
-                        </th>
-                        <th style="text-align: left; vertical-align: middle; " data-field="contract vendor">
-                            <div class="th-inner sortable both">Contract Vendor</div>
-                            <div class="fht-cell"></div>
-                        </th>
-                        <th style="text-align: left; vertical-align: middle; " data-field="product name">
-                            <div class="th-inner sortable both">Product Name</div>
-                            <div class="fht-cell"></div>
-                        </th>
-                        <th style="text-align: left; vertical-align: middle; " data-field="product description">
-                            <div class="th-inner sortable both">Product Description</div>
-                            <div class="fht-cell"></div>
-                        </th>
-                        <th style="text-align: left; vertical-align: middle; " data-field="category">
-                            <div class="th-inner sortable both">Category</div>
-                            <div class="fht-cell"></div>
-                        </th>
-                        <th style="text-align: left; vertical-align: middle; " data-field="list price">
-                            <div class="th-inner sortable both">List Price</div>
-                            <div class="fht-cell"></div>
-                        </th>
-                        <th style="text-align: left; vertical-align: middle; " data-field="nys discount">
-                            <div class="th-inner sortable both">NYS Discount</div>
-                            <div class="fht-cell"></div>
-                        </th>
-                        <th style="text-align: left; vertical-align: middle; " data-field="nys net contract price">
-                            <div class="th-inner sortable both">NYS Net Contract Price</div>
-                            <div class="fht-cell"></div>
-                        </th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr class="no-records-found">
-                        <td colspan="10">No records found</td>
-                    </tr>
-                </tbody>
-
-
+            <table class="table table-hover table-striped" id="table" data-toolbar="#toolbar" data-search="true" data-show-refresh="true" data-show-export="true" data-click-to-select="true" data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="false" data-pagination="false" data-id-field="id" data-show-footer="false" data-url="src/json/data.json" data-response-handler="responseHandler">
+                <!--  <th class="table th"></th> -->
             </table>
         </div>
 
@@ -245,7 +202,7 @@
 
                         // save your data, here just save the current page
                         selections = getIdSelections()
-                            // push or splice the selections if you want to save all data selections
+                        // push or splice the selections if you want to save all data selections
                     })
                 $table.on('all.bs.table', function(e, name, args) {
                     console.log(name, args)
@@ -265,7 +222,14 @@
 
                 $('#locale').change(initTable)
             })
+
         </script>
+
+        <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+        <!-- <script src="css/bootstrap-table-locale-all.min.js"></script> -->
+        <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.16.0/locale/bootstrap-table-en-US.min.js"></script>
     </div>
 
 </html>
