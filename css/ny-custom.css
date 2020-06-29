@@ -1,0 +1,110 @@
+/* CUSTOM STYLE SHEET */
+
+/* colors */
+
+:root {
+    --nywhite: #ffffff;
+    --nyred: #D30000;
+    --nyreddark: #9F0000;
+    --nyyellow: #F7A900;
+    --nyyellowdark: #C68700;
+    --nyorange: #F76800;
+    --nyorangedark: #CA5500;
+    --nybrown: #ac3f14;
+    --nygraylight: #E0E0E0;
+    --nygray: #828282;
+    --nygraydark: #333333;
+    --nydarkblue: #24387E;
+    --nylightblue: #128ec3;
+    --nygraylighter: #F2F2F2;
+     --nygraylightest: #FDFDFD;
+}
+
+
+/* header / nav bar */
+
+.navbar{
+    box-shadow: 0px 8px 8px -4px rgba(0,0,0,.25) !important;
+    }
+
+.navbar-light {
+    background: #fff !important;
+}
+.mynav {
+    background: #fff !important;
+    margin-bottom: -42px !important;
+    
+}
+
+.navbar-brand {
+    margin-left: 20px;
+    margin-top: -5px;
+}
+
+.mynav a {
+    margin-right: 30px;
+    color:#181174 !important;
+    border-bottom: 4px solid transparent;
+}
+
+.mynav a:hover {
+    border-bottom: 4px solid #181174;
+}
+
+.active a {
+    border-bottom: 4px solid #181174;
+}
+
+.mrt a {
+    background: #181174;
+    color: #fff !important;
+    border-radius: 50px;
+    padding: 3px !important;
+    box-shadow: 2px 2px 2px #777;
+    width: 120px;
+    text-align: center;
+}
+
+.mrt a:hover {
+    background: red;
+    box-shadow: none;
+}
+
+/* table */
+
+thead {
+    background-color: var(--nydarkblue) !important;
+    border-color: var(--nygraydark) !important;
+}
+
+.bootstrap-table .fixed-table-container .table tbody tr.selected td {
+    background-color: rgba(0, 0, 0, .05) !important;
+}
+
+.th-inner {
+    color: var(--nywhite) !important;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: var(--nygraylighter) !important;
+}
+
+
+/* buttons */
+
+.btn-danger {
+    background-color: var(--nyred) !important;
+    border-color: var(--nyred) !important;
+    min-width: 120px;
+}
+
+.btn:disabled {
+    opacity: .5 !important;
+    background-color: var(--nygray) !important;
+    border-color: var(--nygray) !important;
+}
+
+.btn-secondary {
+    background-color: var(--nyred) !important;
+    border-color: var(--nyred) !important;
+}
